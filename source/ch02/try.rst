@@ -117,6 +117,8 @@
         local KSC = require "lua.ksc"
 
 
+
+
 - 并增补 `my_openresty.conf`
 
 ::
@@ -128,6 +130,27 @@
 - `/opt/sbin/openresty.server reload` 热加载新的配置文件
 
 就可以了!
+
+
+
+
+12:57 a.m., Thursday Jan. 16 吉米 :
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    lua_package_path '/usr/local/openresty/nginx/conf/lua/?.lua;;';
+
+放到 server 外面去
+::
+
+    lua_package_path '/usr/local/openresty/nginx/conf/lua/?.lua;;';
+    server {
+    ...
+    }
+
+
+善! 这个可以有 ;-)
+
 
 
 仔细...
@@ -179,6 +202,20 @@
 
 
 **一切如愿鸟 !-)**
+
+
+12:57 a.m., Thursday Jan. 16 吉米 :
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+::
+
+    -- chk.lua
+    local KSC = require "lua.ksc"
+
+不要修改..
+
+这个得研究一下,不过,形式上的确不进行消减要直觉的多,
+谢谢!
+
 
 
 复用?
