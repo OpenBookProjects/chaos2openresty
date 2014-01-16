@@ -328,3 +328,22 @@ luarocks
 
 `这就是脚本语言的直觉式开发调试体验!`
 
+11:21 p.m., Wednesday Jan. 15 吉米:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+luarocks with luajit 的方式
+
+    ./configure --with-lua="/usr/local/openresty/luajit/bin" \
+    --prefix="/usr/local" \
+    --lua-suffix="jit-2.1.0-alpha" \
+    --with-lua-include="/usr/local/openresty/luajit/include/luajit-2.1" \
+    --force-config
+
+
+解释一下::
+
+    --lua-suffix="jit-2.1.0-alpha" : 
+        /usr/local/openresty/luajit/bin/luajit-2.1.0-alpha
+
+
+这是专家建议的编译出专用版本的技巧.
